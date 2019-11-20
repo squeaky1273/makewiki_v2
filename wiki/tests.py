@@ -3,13 +3,12 @@ from django.contrib.auth.models import User
 
 from wiki.models import Page
 
-# Create your tests here.
 class WikiTestCase(TestCase):
     def test_true_is_true(self):
         """ Tests if True is equal to True. Should always pass. """
         self.assertEqual(True, True)
 
-def test_page_slugify_on_save(self):
+    def test_page_slugify_on_save(self):
         """ Tests the slug generated when saving a Page. """
         # Author is a required field in our model.
         # Create a user for this test and save it to the test database.
@@ -49,3 +48,10 @@ class PageListViewTests(TestCase):
             ['<Page: My Test Page>', '<Page: Another Test Page>'],
             ordered=False
         )
+    """
+    def test_wiki_details_page_load_specific_page(self):
+        pass
+
+    def test_wiki_page_creation_form_loads(self):
+        pass
+    """
