@@ -48,10 +48,15 @@ class PageListViewTests(TestCase):
             ['<Page: My Test Page>', '<Page: Another Test Page>'],
             ordered=False
         )
-    """
-    def test_wiki_details_page_load_specific_page(self):
+    
+    def test_homepage_button(self):
         pass
 
-    def test_wiki_page_creation_form_loads(self):
+    def test_load_specific_page(self):
         pass
-    """
+
+    def test_load_details(self):
+        pass
+
+    def test_new_wiki_page(self):
+        pass
