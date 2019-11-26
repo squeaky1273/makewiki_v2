@@ -48,15 +48,32 @@ class PageListViewTests(TestCase):
             ['<Page: My Test Page>', '<Page: Another Test Page>'],
             ordered=False
         )
-    
-    def test_homepage_button(self):
-        pass
 
+class PageDetailViewTests(TestCase) :
     def test_load_specific_page(self):
-        pass
+        user = User.objects.create()
 
+        page = Page.objects.create(title="Detail Page", content="Page details", author=user)
+
+        slug = page.slug
+
+        response = self.client.get(f'/{slug}/')
+
+        self.assertEqual(response.status_code, 200)
+
+class PageCreateFormTests(TestCase):
     def test_load_details(self):
-        pass
+        response = self.client.get('/new/')
+        self.assertEqual(response.status_code, 200)
 
     def test_new_wiki_page(self):
-        pass
+        user = User.objects.create()
+
+        data = {
+            'title': 'Detail Page',
+            'author': user,
+            'content': 'This is detail page content',
+        }
+
+        response = self.client.post(reverse_lazy('wiki-details-page', args=['detail-page'])), data=data, follow=True)
+        self.assertEqual(response.status_code, 302)
