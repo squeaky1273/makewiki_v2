@@ -18,7 +18,7 @@ class PageDetail(APIView):
         page = get_object_or_404(Page, pk=pk)
         data = PageSerializer(page).data
         return Response(data)
-
+"""
 class PageCreate(APIView):
     def get(self, request):
 
@@ -27,3 +27,4 @@ class PageUpdate(APIView):
 
 class PageDelete(APIView):
     def get():
+"""

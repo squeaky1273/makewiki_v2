@@ -1,5 +1,12 @@
 {% extends "base.html" %}
-
+{% load static %}
+<html>
+<head>
+    {% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'wiki/style.css' %}">
+    {% endblock head %}
+</head>
+<body>
 {% block content %}
   <h3>Wikis {% if pages %}<small class="text-muted">({{ pages|length }} Page{{ pages|length|pluralize:"s" }})</small>{% endif %}</h3>
   <hr>
@@ -12,7 +19,9 @@
   {% else %}
     <div class="alert alert-primary" role="alert">No pages to display.</div>
   {% endif %}
+  <img src="{% static "wiki/computer.gif" %}" alt="Computer gif">
 {% endblock %}
+</body>
 
 
 
