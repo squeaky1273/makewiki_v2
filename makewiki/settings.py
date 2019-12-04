@@ -153,7 +153,7 @@ try:
 except ImportError:
     pass
 
-ALLOWED_HOSTS = ['localhost', 'makewiki_v2-p-r.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', 'makewiki-p-r.herokuapp.com']
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
